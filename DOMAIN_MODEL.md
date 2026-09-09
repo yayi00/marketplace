@@ -1,6 +1,4 @@
-# NexusMarket Domain Model
 
-Basado en las especificaciones del documento NexusMarket y los requerimientos del profesor, aquí tienes el análisis del modelo de dominio y la estructura de las clases para la implementación en Java.
 
 ## 1. Jerarquía y Diseño de Clases
 
