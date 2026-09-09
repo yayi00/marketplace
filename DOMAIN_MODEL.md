@@ -78,4 +78,3 @@ Order
 
 ---
 
-Este documento está pensado para añadirse a la raíz del proyecto como `DOMAIN_MODEL.md` y complementa la implementación de las clases Java en `src/main/java/com/nexusmarket/model/`.
