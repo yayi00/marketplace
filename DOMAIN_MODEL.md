@@ -1,6 +1,4 @@
-# NexusMarket Domain Model
 
-Basado en las especificaciones del documento NexusMarket y los requerimientos del profesor, aquí tienes el análisis del modelo de dominio y la estructura de las clases para la implementación en Java.
 
 ## 1. Jerarquía y Diseño de Clases
 
@@ -195,4 +193,3 @@ Esta estructura sigue el patrón DDD: dominio, puertos y servicios de aplicació
 
 ---
 
-Este documento está pensado para añadirse a la raíz del proyecto como `DOMAIN_MODEL.md` y complementa la implementación de las clases Java en `src/main/java/com/nexusmarket/model/`.
