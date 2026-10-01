@@ -12,6 +12,13 @@ public class Order {
     private OrderStatus status;
 
     public Order(String id, String buyerId, OrderStatus status) {
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("El identificador del pedido es obligatorio.");
+        }
+        if (buyerId == null || buyerId.isBlank()) {
+            throw new IllegalArgumentException("El comprador del pedido es obligatorio.");
+        }
+
         this.id = id;
         this.buyerId = buyerId;
         this.status = status;
@@ -24,14 +31,26 @@ public class Order {
     public void setBuyerId(String buyerId) { this.buyerId = buyerId; }
 
     public List<OrderItem> getItems() { return items; }
-    public void setItems(List<OrderItem> items) { this.items = items; recalcTotal(); }
+    public void setItems(List<OrderItem> items) {
+        if (items == null) {
+            throw new IllegalArgumentException("La lista de artículos del pedido no puede ser nula.");
+        }
+        this.items = items;
+        recalcTotal();
+    }
 
     public double getTotalAmount() { return totalAmount; }
 
     public OrderStatus getStatus() { return status; }
     public void setStatus(OrderStatus status) { this.status = status; }
 
-    public void addItem(OrderItem item) { this.items.add(item); recalcTotal(); }
+    public void addItem(OrderItem item) {
+        if (item == null) {
+            throw new IllegalArgumentException("El artículo del pedido no puede ser nulo.");
+        }
+        this.items.add(item);
+        recalcTotal();
+    }
 
     public void removeItem(OrderItem item) { this.items.remove(item); recalcTotal(); }
 

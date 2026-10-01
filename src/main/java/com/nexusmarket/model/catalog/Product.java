@@ -10,6 +10,19 @@ public abstract class Product {
     private String sellerId;
 
     public Product(String id, String name, double price, ProductStatus status, String sellerId) {
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("El identificador del producto es obligatorio.");
+        }
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("El nombre del producto es obligatorio.");
+        }
+        if (price < 0) {
+            throw new IllegalArgumentException("El precio del producto no puede ser negativo.");
+        }
+        if (sellerId == null || sellerId.isBlank()) {
+            throw new IllegalArgumentException("El vendedor del producto es obligatorio.");
+        }
+
         this.id = id;
         this.name = name;
         this.price = price;
@@ -24,7 +37,12 @@ public abstract class Product {
     public void setName(String name) { this.name = name; }
 
     public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("El precio del producto no puede ser negativo.");
+        }
+        this.price = price;
+    }
 
     public ProductStatus getStatus() { return status; }
     public void setStatus(ProductStatus status) { this.status = status; }
